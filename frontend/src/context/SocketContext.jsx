@@ -18,8 +18,8 @@ export const SocketContextProvider = ({ children }) => {
 
     useEffect(() => {
         if(authUser) {
-            const socket = io("https://chatsphere-rvnp.onrender.com/",{
-                query:{
+            const socket = io("https://chatsphere-rvnp.onrender.com",{
+                query:{ 
                     userId: authUser._id,
                 }
             });
