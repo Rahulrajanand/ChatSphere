@@ -1,27 +1,45 @@
+import { useEffect, useRef } from "react";
+import useGetMessages from "../../hooks/useGetMessages"
+import MessageSkeleton from "../skeletons/MessageSkeleton";
 import Message from "./Message"
+import useListenMessages from "../../hooks/useListenMessages";
+
 
 const Messages = () => {
+  const {messages, loading} = useGetMessages();
+  useListenMessages();
+  const lastMessageRef = useRef();
+  
+  //this will automatically scroll to latest message whenever we open a chart
+  useEffect(() => {
+    setTimeout(() => {
+      lastMessageRef.current?.scrollIntoView({behavior: "smooth"});
+    },100)
+  },[messages])
+
   return (
-    <div className="px-4 flex-1 overflow-auto">  
-        <Message />
-        <Message />
-        <Message />
-        <Message />
-        <Message />
-        <Message />
-        <Message />
-        <Message />
-        <Message />
-        <Message />
-        <Message />
+    <div className="px-4 flex-1 overflow-auto">
 
+      {!loading && 
+        messages && messages.length > 0 &&
+         messages.map((message) => (
+         <div key={message._id} 
+            ref={lastMessageRef}
+         >
+          <Message message={message} />
+         </div>
+      ))}
 
+    {loading && [...Array(3)].map((_, idx) => <MessageSkeleton key={idx} />)}
+    {!loading && (!messages || messages.length)  === 0 && (
+        <p className="text-center">Send a message to start the Conversation </p>
+      )}
     </div> //overflow-auto allows to scroll if message gets more than a certain limit
            // if overflow-auto is not there we cann't scroll
-  )
-}
+  );
+};
 
-export default Messages
+export default Messages;
 
 
 // STARTER CODE
