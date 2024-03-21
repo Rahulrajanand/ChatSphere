@@ -27,5 +27,15 @@ JWT (JSON Web Tokens): Used for authentication and authorization purposes.
 
 Socket.io: JavaScript library for real-time web applications enabling bidirectional communication between clients and servers.
 
+### Setup .env file
+```
+PORT=...
+MONGO_DB_URI=...
+JWT_SECRET=...
+NODE_ENV=...
+
+```
+
+
 
 
