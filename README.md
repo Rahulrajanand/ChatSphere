@@ -28,10 +28,4 @@ JWT (JSON Web Tokens): Used for authentication and authorization purposes.
 Socket.io: JavaScript library for real-time web applications enabling bidirectional communication between clients and servers.
 
 
-## Getting Started:
 
-Clone the repository:
-
-bash
-Copy code
-git clone https://github.com/your-username/mern-chat-app.git
