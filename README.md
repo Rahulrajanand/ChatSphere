@@ -6,31 +6,32 @@ A real-time chat application built with the MERN stack (MongoDB, Express.js, Rea
 ### Features : 
 
 
-Real-Time Messaging: Instant messaging with Socket.io enables seamless real-time communication between users.
+- Real-Time Messaging: Instant messaging with Socket.io enables seamless real-time communication between users.
 
-Authentication: Secure JWT authentication ensures that only authenticated users can access the chat application.
+- Authentication: Secure JWT authentication ensures that only authenticated users can access the chat application.
 
-User Management: Registration and login functionalities allow users to create accounts and sign in securely.
+- User Management: Registration and login functionalities allow users to create accounts and sign in securely.
 
-Chat Rooms: Users can join different chat rooms based on their interests or preferences.
+- Chat Rooms: Users can join different chat rooms based on their interests or preferences.
 
-Message History: Chat history is stored in MongoDB, allowing users to view previous messages upon joining a chat room.
+- Message History: Chat history is stored in MongoDB, allowing users to view previous messages upon joining a chat room.
 
-Responsive Design: The application is responsive and works well on various devices and screen sizes.
+- Responsive Design: The application is responsive and works well on various devices and screen sizes.
 
 
 ### Technologies Used:
-MongoDB: NoSQL database for storing user data and chat messages.
 
-Express.js: Web application framework for Node.js used to build the RESTful API.
+- MongoDB: NoSQL database for storing user data and chat messages.
 
-React.js: Frontend library for building user interfaces.
+- Express.js: Web application framework for Node.js used to build the RESTful API.
 
-Node.js: JavaScript runtime environment for server-side development.
+- React.js: Frontend library for building user interfaces.
 
-JWT (JSON Web Tokens): Used for authentication and authorization purposes.
+- Node.js: JavaScript runtime environment for server-side development.
 
-Socket.io: JavaScript library for real-time web applications enabling bidirectional communication between clients and servers.
+- JWT (JSON Web Tokens): Used for authentication and authorization purposes.
+
+- Socket.io: JavaScript library for real-time web applications enabling bidirectional communication between clients and servers.
 
 ### Setup .env file
 ```
