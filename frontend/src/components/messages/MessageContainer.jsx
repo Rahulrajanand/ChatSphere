@@ -44,7 +44,7 @@ const NoChatSelected = () => {
       items-center gap-2">
         <p>Welcome 👋 {authUser.fullName} ❄️ </p>
         <p>Select a chart to start messaging</p>
-        <TiMessages className='text-3xl sm:text-lg md:text-6xl text-center' />
+        <TiMessages className='text-3xl  md:text-6xl text-center' />
       </div>
     </div>
   )
