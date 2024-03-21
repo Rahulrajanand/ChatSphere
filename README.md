@@ -16,8 +16,13 @@ Responsive Design: The application is responsive and works well on various devic
 
 ## Technologies Used:
 MongoDB: NoSQL database for storing user data and chat messages.
+
 Express.js: Web application framework for Node.js used to build the RESTful API.
+
 React.js: Frontend library for building user interfaces.
+
 Node.js: JavaScript runtime environment for server-side development.
+
 JWT (JSON Web Tokens): Used for authentication and authorization purposes.
+
 Socket.io: JavaScript library for real-time web applications enabling bidirectional communication between clients and servers.
