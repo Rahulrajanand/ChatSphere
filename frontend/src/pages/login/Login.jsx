@@ -55,6 +55,14 @@ const Login = () => {
             {loading ? <span className="loading loading-spinner"></span> : "Login" }
 
         </button>
+        <button className="btn btn-block btn-sm mt-2"
+            onClick={() => {
+              login.setValue('email', 'demo@example.com');
+              login.setValue('password', '123456');
+            }}
+          >
+            Login as Demo
+          </button>
       </div>
      </form>
     </div>
