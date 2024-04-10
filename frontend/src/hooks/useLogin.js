@@ -8,7 +8,7 @@ const useLogin = () => {
 
   const login = async (username, password) => {
 
-    const success =  handleInputErrors(username,password);
+  const success =  handleInputErrors(username,password);
     if (!success) return;
     setLoading(true)
     try {
@@ -23,9 +23,11 @@ const useLogin = () => {
             throw new Error(data.error)
         }
 
+        //Set user data in local storage
         localStorage.setItem("chat-user", JSON.stringify(data))
+        //Set user data in context
         setAuthUser(data)
-
+    
     } catch (error) {
         toast.error(error.message)
     } finally {
@@ -33,7 +35,13 @@ const useLogin = () => {
     }
   }
 
-  return {loading, login}
+  const demoUser = () => {
+     login('demo@example.com', '123456');
+    // login.setValue('demo@example.com');
+    // login.setValue('123456');
+    };
+
+return {loading, login, demoUser}
 }
 
 export default useLogin;
@@ -47,3 +55,4 @@ function handleInputErrors(username, password) {
     return true;
 
 }
+

@@ -7,7 +7,7 @@ const Login = () => {
   const [username,setUsername] =useState("");
   const [password,setPassword] =useState("");
 
-  const {loading, login} = useLogin()
+  const {loading, login, demoUser} = useLogin()
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -56,10 +56,8 @@ const Login = () => {
 
         </button>
         <button className="btn btn-block btn-sm mt-2"
-            onClick={() => {
-              login.setValue('email', 'demo@example.com');
-              login.setValue('password', '123456');
-            }}
+            onClick={demoUser}
+            disabled={loading}
           >
             Login as Demo
           </button>
