@@ -23,20 +23,17 @@ const useLogin = () => {
           throw new Error('Invalid username or password');
         }
 
-        // const userData = {
-        //   username: 'demo@example.com',
-        //   // Other user data
-        // };
+        
 
-        const userData = await res.json()
-        if(userData.error){
-            throw new Error(userData.error)
+        const data = await res.json()
+        if(data.error){
+            throw new Error(data.error)
         }
 
         //Set user data in local storage
-        localStorage.setItem("chat-user", JSON.stringify(userData))
+        localStorage.setItem("chat-user", JSON.stringify(data))
         //Set user data in context
-        setAuthUser(userData);
+        setAuthUser(data)
     
     } catch (error) {
         toast.error(error.message)
