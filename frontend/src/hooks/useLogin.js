@@ -36,7 +36,7 @@ const useLogin = () => {
   }
 
   const demoUser = () => {
-     login('demo@example.com', '123456');
+     login('demo', '123456');
     // login.setValue('demo@example.com');
     // login.setValue('123456');
     };
