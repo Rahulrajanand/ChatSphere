@@ -7,10 +7,11 @@ const useLogin = () => {
   const {setAuthUser} = useAuthContext()
 
   const login = async (username, password) => {
+    setLoading(true);
 
   const success =  handleInputErrors(username,password);
     if (!success) return;
-    setLoading(true)
+    
     try {
         const res = await fetch("/api/auth/login", {
             method: "POST",
@@ -18,15 +19,24 @@ const useLogin = () => {
             body: JSON.stringify({username, password})
         })
 
-        const data = await res.json()
-        if(data.error){
-            throw new Error(data.error)
+        if (username !== 'demo@example.com' || password !== '123456') {
+          throw new Error('Invalid username or password');
+        }
+
+        // const userData = {
+        //   username: 'demo@example.com',
+        //   // Other user data
+        // };
+
+        const userData = await res.json()
+        if(userData.error){
+            throw new Error(userData.error)
         }
 
         //Set user data in local storage
-        localStorage.setItem("chat-user", JSON.stringify(data))
+        localStorage.setItem("chat-user", JSON.stringify(userData))
         //Set user data in context
-        setAuthUser(data)
+        setAuthUser(userData);
     
     } catch (error) {
         toast.error(error.message)
