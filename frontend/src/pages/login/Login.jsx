@@ -7,7 +7,7 @@ const Login = () => {
   const [username,setUsername] =useState("");
   const [password,setPassword] =useState("");
 
-  const {loading, login, demoUser} = useLogin()
+  const {loading, login,} = useLogin()
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -55,12 +55,12 @@ const Login = () => {
             {loading ? <span className="loading loading-spinner"></span> : "Login" }
 
         </button>
-        <button className="btn btn-block btn-sm mt-2"
+        {/* <button className="btn btn-block btn-sm mt-2"
             onClick={demoUser}
             disabled={loading}
           >
             Login as Demo
-          </button>
+          </button> */}
       </div>
      </form>
     </div>
